@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skink Tattoo Studio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <img src="../resources/icons/skink-logo-nav-bar.svg" alt="Skink" class="logo-svg">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#estilos">Estilos</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#artistas">Artistas</a></li>
+        <li><a href="#contacto">Ubicación</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-icon-btn" aria-label="Buscar">
+          <img src="../resources/icons/search.svg" alt="" class="nav-icon">
+        </button>
+        <a href="#reservar" class="nav-cta-btn">Reservar cita</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+      <ul>
+        <li><a href="#estilos">Estilos</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#artistas">Artistas</a></li>
+        <li><a href="#contacto">Ubicación</a></li>
+        <li><a href="#reservar">Reservar cita</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="card card--hero reveal-hero">
+      <div class="card__bg" style="background-image: url('../resources/home/portada-principal-skink.jpg')"></div>
+      <div class="card__overlay"></div>
+      <div class="card__body card__body--center">
+        <p class="eyebrow eyebrow--light">Skink Tattoo Studio</p>
+        <h1 class="card__title card__title--light">Arte en tu piel.</h1>
+        <p class="card__sub card__sub--light">Diseño personalizado.<br>Técnica de precisión.</p>
+        <div class="card__ctas">
+          <a href="#galeria" class="btn btn--white">Ver galería</a>
+          <a href="#reservar" class="btn btn--outline-white">Agendar cita</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTILOS GRID -->
+    <div class="grid" id="estilos">
+
+      <!-- BlackWork — dark -->
+      <article class="card card--half card--dark reveal">
+        <div class="card__body">
+          <p class="eyebrow eyebrow--light">Estilo</p>
+          <h2 class="card__title card__title--light">BlackWork</h2>
+          <p class="card__sub card__sub--light">Líneas limpias.<br>Contraste absoluto.</p>
+          <div class="card__ctas">
+            <a href="#galeria" class="btn btn--white">Ver trabajos</a>
+            <a href="#reservar" class="btn btn--link-light">Agendar</a>
+          </div>
+        </div>
+        <div class="card__img-wrap">
+          <img src="../resources/fotos-principales-album/BlackWork.jpg" alt="Estilo BlackWork" loading="lazy">
+        </div>
+      </article>
+
+      <!-- Color — light -->
+      <article class="card card--half card--light reveal">
+        <div class="card__body">
+          <p class="eyebrow eyebrow--dark">Estilo</p>
+          <h2 class="card__title card__title--dark">Color</h2>
+          <p class="card__sub card__sub--dark">Vibrante. Vivo.<br>Lleno de vida.</p>
+          <div class="card__ctas">
+            <a href="#galeria" class="btn btn--blue">Ver trabajos</a>
+            <a href="#reservar" class="btn btn--link-dark">Agendar</a>
+          </div>
+        </div>
+        <div class="card__img-wrap">
+          <img src="../resources/fotos-principales-album/Color.jpg" alt="Estilo Color" loading="lazy">
+        </div>
+      </article>
+
+      <!-- Lettering — light -->
+      <article class="card card--half card--light reveal">
+        <div class="card__body">
+          <p class="eyebrow eyebrow--dark">Estilo</p>
+          <h2 class="card__title card__title--dark">Lettering</h2>
+          <p class="card__sub card__sub--dark">Palabras que<br>permanecen.</p>
+          <div class="card__ctas">
+            <a href="#galeria" class="btn btn--blue">Ver trabajos</a>
+            <a href="#reservar" class="btn btn--link-dark">Agendar</a>
+          </div>
+        </div>
+        <div class="card__img-wrap">
+          <img src="../resources/fotos-principales-album/Lettering.jpg" alt="Estilo Lettering" loading="lazy">
+        </div>
+      </article>
+
+      <!-- Minimalismo — dark -->
+      <article class="card card--half card--dark reveal">
+        <div class="card__body">
+          <p class="eyebrow eyebrow--light">Estilo</p>
+          <h2 class="card__title card__title--light">Minimalismo</h2>
+          <p class="card__sub card__sub--light">Menos es más.<br>Elegancia pura.</p>
+          <div class="card__ctas">
+            <a href="#galeria" class="btn btn--white">Ver trabajos</a>
+            <a href="#reservar" class="btn btn--link-light">Agendar</a>
+          </div>
+        </div>
+        <div class="card__img-wrap">
+          <img src="../resources/fotos-principales-album/Minimalismo.jpg" alt="Estilo Minimalismo" loading="lazy">
+        </div>
+      </article>
+
+      <!-- Microrealismo — full width dark -->
+      <article class="card card--full card--dark reveal">
+        <div class="card__body">
+          <p class="eyebrow eyebrow--light">Estilo destacado</p>
+          <h2 class="card__title card__title--light">Microrealismo</h2>
+          <p class="card__sub card__sub--light">Detalle fotográfico.<br>A escala íntima.</p>
+          <div class="card__ctas">
+            <a href="#galeria" class="btn btn--white">Ver trabajos</a>
+            <a href="#reservar" class="btn btn--link-light">Agendar</a>
+          </div>
+        </div>
+        <div class="card__img-wrap card__img-wrap--wide">
+          <img src="../resources/fotos-principales-album/Microrealismo.jpg" alt="Estilo Microrealismo" loading="lazy">
+        </div>
+      </article>
+
+      <!-- Sombra — dark -->
+      <article class="card card--half card--dark reveal">
+        <div class="card__body">
+          <p class="eyebrow eyebrow--light">Estilo</p>
+          <h2 class="card__title card__title--light">Sombra</h2>
+          <p class="card__sub card__sub--light">Profundidad.<br>Dimensión real.</p>
+          <div class="card__ctas">
+            <a href="#galeria" class="btn btn--white">Ver trabajos</a>
+            <a href="#reservar" class="btn btn--link-light">Agendar</a>
+          </div>
+        </div>
+        <div class="card__img-wrap">
+          <img src="../resources/sombra/1.jpg" alt="Estilo Sombra" loading="lazy">
+        </div>
+      </article>
+
+      <!-- Espalda — light -->
+      <article class="card card--half card--light reveal">
+        <div class="card__body">
+          <p class="eyebrow eyebrow--dark">Especialidad</p>
+          <h2 class="card__title card__title--dark">Piezas de Espalda</h2>
+          <p class="card__sub card__sub--dark">Arte a gran escala.<br>Proyectos completos.</p>
+          <div class="card__ctas">
+            <a href="#galeria" class="btn btn--blue">Ver trabajos</a>
+            <a href="#reservar" class="btn btn--link-dark">Agendar</a>
+          </div>
+        </div>
+        <div class="card__img-wrap">
+          <img src="../resources/fotos-principales-album/Espalda.jpg" alt="Piezas de espalda" loading="lazy">
+        </div>
+      </article>
+
+    </div>
+
+    <!-- GALERÍA CAROUSEL -->
+    <section class="tpg" id="galeria">
+      <div class="tpg__header reveal">
+        <h2>Galería reciente</h2>
+        <p>Una muestra de nuestros trabajos más recientes.</p>
+      </div>
+      <div class="tpg__wrapper">
+        <div class="tpg__track" id="tpg-track">
+
+          <div class="tpg__slide">
+            <img src="../resources/blackwork/1.jpg" alt="BlackWork" loading="lazy">
+            <div class="tpg__info">
+              <p class="tpg__label">BlackWork</p>
+              <span class="tpg__tag">Estilo · Líneas que definen. Sin color, puro contraste.</span>
+              <a href="#reservar" class="btn btn--white">Agendar cita</a>
+            </div>
+          </div>
+
+          <div class="tpg__slide">
+            <img src="../resources/color/3.jpg" alt="Color" loading="lazy">
+            <div class="tpg__info">
+              <p class="tpg__label">Color</p>
+              <span class="tpg__tag">Estilo · El color que lleva tu historia. Vibrante y duradero.</span>
+              <a href="#reservar" class="btn btn--white">Agendar cita</a>
+            </div>
+          </div>
+
+          <div class="tpg__slide">
+            <img src="../resources/microrealismo/2.jpg" alt="Microrealismo" loading="lazy">
+            <div class="tpg__info">
+              <p class="tpg__label">Microrealismo</p>
+              <span class="tpg__tag">Técnica · Detalle fotográfico permanente en tu piel.</span>
+              <a href="#reservar" class="btn btn--white">Agendar cita</a>
+            </div>
+          </div>
+
+          <div class="tpg__slide">
+            <img src="../resources/lettering/2.jpg" alt="Lettering" loading="lazy">
+            <div class="tpg__info">
+              <p class="tpg__label">Lettering</p>
+              <span class="tpg__tag">Estilo · Las palabras que quieres llevar contigo.</span>
+              <a href="#reservar" class="btn btn--white">Agendar cita</a>
+            </div>
+          </div>
+
+          <div class="tpg__slide">
+            <img src="../resources/minimalismo/3.jpg" alt="Minimalismo" loading="lazy">
+            <div class="tpg__info">
+              <p class="tpg__label">Minimalismo</p>
+              <span class="tpg__tag">Estilo · Menos es más. Elegancia en cada trazo.</span>
+              <a href="#reservar" class="btn btn--white">Agendar cita</a>
+            </div>
+          </div>
+
+          <div class="tpg__slide">
+            <img src="../resources/sombra/2.jpg" alt="Sombra" loading="lazy">
+            <div class="tpg__info">
+              <p class="tpg__label">Sombra</p>
+              <span class="tpg__tag">Técnica · Profundidad y dimensión en cada pieza.</span>
+              <a href="#reservar" class="btn btn--white">Agendar cita</a>
+            </div>
+          </div>
+
+          <div class="tpg__slide">
+            <img src="../resources/espalda/1.jpg" alt="Pieza de Espalda" loading="lazy">
+            <div class="tpg__info">
+              <p class="tpg__label">Piezas de Espalda</p>
+              <span class="tpg__tag">Gran formato · Arte que transforma. Proyectos completos.</span>
+              <a href="#reservar" class="btn btn--white">Agendar cita</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="tpg__dots" id="tpg-dots"></div>
+    </section>
+
+    <!-- CTA RESERVAR -->
+    <section class="cta-banner" id="reservar">
+      <div class="cta-banner__content reveal">
+        <h2>¿Listo para tu próximo tattoo?</h2>
+        <p>Agenda tu consulta gratuita. Te asesoramos en el diseño y te damos un presupuesto sin compromiso.</p>
+        <a href="#contacto" class="btn btn--white btn--lg">Agendar cita ahora</a>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contact" id="contacto">
+      <div class="contact__grid reveal">
+        <div class="contact__item">
+          <h3>Ubicación</h3>
+          <p>Calle 10 # 30-72 Local 102<br>Cali, Colombia</p>
+        </div>
+        <div class="contact__item">
+          <h3>Horario</h3>
+          <p>Lunes a Sábado<br>10:00 am – 8:00 pm</p>
+        </div>
+        <div class="contact__item">
+          <h3>Contacto</h3>
+          <p>310 402 3043<br>skinktattohouse19@gmail.com</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__tagline">Arte en tu piel. Diseño personalizado. Técnica de precisión.</p>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h4>Estilos</h4>
+          <ul>
+            <li><a href="#estilos">BlackWork</a></li>
+            <li><a href="#estilos">Color</a></li>
+            <li><a href="#estilos">Lettering</a></li>
+            <li><a href="#estilos">Minimalismo</a></li>
+            <li><a href="#estilos">Microrealismo</a></li>
+            <li><a href="#estilos">Sombra</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#artistas">Artistas</a></li>
+            <li><a href="#contacto">Ubicación</a></li>
+            <li><a href="#reservar">Agendar cita</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Cuidado</h4>
+          <ul>
+            <li><a href="#">Proceso de sanado</a></li>
+            <li><a href="#">Cuidados post-tattoo</a></li>
+            <li><a href="#">Preparación previa</a></li>
+            <li><a href="#">Preguntas frecuentes</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Síguenos</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">TikTok</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>Copyright © 2025 Skink Tattoo Studio. Todos los derechos reservados.</p>
+        <div class="footer__legal">
+          <a href="#">Privacidad</a>
+          <a href="#">Términos</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
