@@ -1,0 +1,18 @@
+backend:
+  name: github
+  repo: iasynthetix-ia/skink-tattoo-website
+  branch: main
+
+media_folder: resources/promociones
+public_folder: /resources/promociones
+
+collections:
+  - name: promociones
+    label: Promociones
+    folder: _promociones
+    create: true
+    fields:
+      - { label: Título, name: title, widget: string }
+      - { label: Imagen, name: image, widget: image }
+      - { label: Descripción, name: description, widget: text }
+      - { label: Texto del botón, name: cta, widget: string, default: "Agendar ahora" }
