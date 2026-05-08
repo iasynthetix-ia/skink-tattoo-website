@@ -2,6 +2,7 @@ backend:
   name: github
   repo: iasynthetix-ia/skink-tattoo-website
   branch: main
+  site_domain: https://lucky-cascaron-7c403f.netlify.app/
 
 media_folder: resources/promociones
 public_folder: /resources/promociones
