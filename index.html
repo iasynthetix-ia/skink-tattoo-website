@@ -4,255 +4,365 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Skink Tattoo Studio</title>
+  <title>SKINK TATTOO HOUSE - Estudio de Tatuajes en Cali</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Estudio de tatuajes en Cali con diseño personalizado. BlackWork, Color, Microrealismo y más estilos. Artistas profesionales. ¡Agenda tu cita gratis!">
+  <meta name="keywords" content="tatuajes Cali, estudio de tatuajes, tatuajes personalizados, blackwork, color, microrealismo, tatuajes Colombia">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="SKINK TATTOO HOUSE - Estudio de Tatuajes en Cali">
+  <meta property="og:description" content="Estudio de tatuajes profesional con diseño personalizado">
+  <meta property="og:image" content="https://skinktattohouse.com/resources/home/logo-skink.png">
+  <meta property="og:url" content="https://skinktattohouse.com">
+  <meta property="og:type" content="website">
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "SKINK TATTOO HOUSE",
+    "image": "https://skinktattohouse.com/resources/home/logo-skink.png",
+    "description": "Estudio de tatuajes profesional en Cali con diseño personalizado",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle 10 #30-72 Local 102",
+      "addressLocality": "Cali",
+      "addressRegion": "Valle del Cauca",
+      "postalCode": "760001",
+      "addressCountry": "CO"
+    },
+    "telephone": "+573104023043",
+    "url": "https://skinktattohouse.com",
+    "priceRange": "$$",
+    "areaServed": "Cali",
+    "hoursOfOperation": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "10:00",
+        "closes": "20:00"
+      }
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
+  <!-- ══════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════ -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
+
+      <!-- Logo -->
       <a href="#" class="nav-logo">
-        <img src="../resources/icons/skink-logo-nav-bar.svg" alt="Skink" class="logo-svg">
+        <img src="resources/home/logo-skink.png" alt="Skink Tattoo House" class="logo-img">
       </a>
+
+      <!-- Desktop links -->
       <ul class="nav-links">
-        <li><a href="#estilos">Estilos</a></li>
-        <li><a href="#galeria">Galería</a></li>
-        <li><a href="#artistas">Artistas</a></li>
-        <li><a href="#contacto">Ubicación</a></li>
+
+        <!-- Galería con dropdown -->
+        <li class="nav-item--dropdown">
+          <a href="#galeria" class="nav-dropdown-toggle" data-i18n="nav.gallery">Galería</a>
+          <ul class="nav-dropdown">
+            <li><a href="#galeria" data-i18n="styles.blackwork">BlackWork</a></li>
+            <li><a href="#galeria" data-i18n="styles.color">Color</a></li>
+            <li><a href="#galeria" data-i18n="styles.lettering">Lettering</a></li>
+            <li><a href="#galeria" data-i18n="styles.micro">Microrealismo</a></li>
+            <li><a href="#galeria" data-i18n="styles.realism">Realismo</a></li>
+            <li><a href="#galeria" data-i18n="styles.anime">Anime</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/academia-skink/" data-i18n="nav.academy">Academia Skink</a></li>
+        <li><a href="/tienda/" data-i18n="nav.shop">Tienda</a></li>
+        <li>
+          <a href="https://share.google/bfrcZeiuWPF4H82DL" target="_blank" rel="noopener" data-i18n="nav.location">Ubicación</a>
+        </li>
       </ul>
+
+      <!-- Desktop right: toggle + CTA -->
       <div class="nav-actions">
-        <button class="nav-icon-btn" aria-label="Buscar">
-          <img src="../resources/icons/search.svg" alt="" class="nav-icon">
+        <button class="lang-toggle" id="lang-toggle" aria-label="Cambiar idioma">
+          <span class="lang-flag-icon">🇨🇴</span>
+          <span class="lang-code">CO</span>
         </button>
-        <a href="#reservar" class="nav-cta-btn">Reservar cita</a>
+        <a href="https://wa.me/573104023043?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20mi%20cita%20de%20tatuaje%20en%20SKINK%20TATTOO%20HOUSE.%20%F0%9F%8E%A8"
+           target="_blank" rel="noopener"
+           class="nav-cta-btn"
+           data-i18n="nav.cta">Agendar cita</a>
       </div>
+
+      <!-- Mobile: CTA visible siempre -->
+      <a href="https://wa.me/573104023043?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20mi%20cita%20de%20tatuaje%20en%20SKINK%20TATTOO%20HOUSE.%20%F0%9F%8E%A8"
+         target="_blank" rel="noopener"
+         class="nav-cta-btn nav-cta-btn--mobile"
+         data-i18n="nav.cta">Agendar cita</a>
+
+      <!-- Hamburger -->
       <button class="hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
+
     </div>
+
+    <!-- Mobile panel -->
     <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
       <ul>
-        <li><a href="#estilos">Estilos</a></li>
-        <li><a href="#galeria">Galería</a></li>
-        <li><a href="#artistas">Artistas</a></li>
-        <li><a href="#contacto">Ubicación</a></li>
-        <li><a href="#reservar">Reservar cita</a></li>
+
+        <li class="nav-mobile-item--dropdown">
+          <button class="nav-mobile-dropdown-toggle" aria-expanded="false" data-i18n="nav.gallery">Galería</button>
+          <ul class="nav-mobile-dropdown" aria-hidden="true">
+            <li><a href="#galeria" data-i18n="styles.blackwork">BlackWork</a></li>
+            <li><a href="#galeria" data-i18n="styles.color">Color</a></li>
+            <li><a href="#galeria" data-i18n="styles.lettering">Lettering</a></li>
+            <li><a href="#galeria" data-i18n="styles.micro">Microrealismo</a></li>
+            <li><a href="#galeria" data-i18n="styles.realism">Realismo</a></li>
+            <li><a href="#galeria" data-i18n="styles.anime">Anime</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/academia-skink/" data-i18n="nav.academy">Academia Skink</a></li>
+        <li><a href="/tienda/" data-i18n="nav.shop">Tienda</a></li>
+        <li>
+          <a href="https://share.google/bfrcZeiuWPF4H82DL" target="_blank" rel="noopener" data-i18n="nav.location">Ubicación</a>
+        </li>
+
+        <li class="nav-mobile-lang-item">
+          <button class="lang-toggle lang-toggle--mobile" id="lang-toggle-mobile" aria-label="Cambiar idioma">
+            <span class="lang-flag-icon">🇨🇴</span>
+            <span class="lang-code">CO</span>
+            <span class="lang-toggle-label">Idioma / Language</span>
+          </button>
+        </li>
+
       </ul>
     </div>
   </nav>
 
   <main>
 
-    <!-- HERO -->
+    <!-- ══════════════════════════════════
+         HERO
+    ══════════════════════════════════ -->
     <section class="card card--hero reveal-hero">
-      <div class="card__bg" style="background-image: url('../resources/home/portada-principal-skink.jpg')"></div>
+      <div class="card__bg" style="background-image: url('resources/home/portada-principal-skink.jpg')"></div>
       <div class="card__overlay"></div>
       <div class="card__body card__body--center">
         <p class="eyebrow eyebrow--light">Skink Tattoo Studio</p>
-        <h1 class="card__title card__title--light">Arte en tu piel.</h1>
-        <p class="card__sub card__sub--light">Diseño personalizado.<br>Técnica de precisión.</p>
-        <div class="card__ctas">
-          <a href="#galeria" class="btn btn--white">Ver galería</a>
-          <a href="#reservar" class="btn btn--outline-white">Agendar cita</a>
+        <h1 class="card__title card__title--light" data-i18n="hero.title">Arte en tu piel.</h1>
+        <p class="card__sub card__sub--light" data-i18n="hero.subtitle">Diseño personalizado.<br>Técnica de precisión.</p>
+        <div class="hero-cta">
+          <a href="https://wa.me/573104023043?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20mi%20cita%20de%20tatuaje%20en%20SKINK%20TATTOO%20HOUSE.%20%F0%9F%8E%A8"
+             target="_blank" rel="noopener"
+             class="btn btn--white btn--lg btn--hero"
+             data-i18n="nav.cta">Agendar cita</a>
         </div>
       </div>
     </section>
 
-    <!-- ESTILOS GRID -->
+    <!-- ══════════════════════════════════
+         PROMOCIÓN DESTACADA
+    ══════════════════════════════════ -->
+    <section class="promo" id="promocion">
+      <div class="promo__inner">
+        <div class="promo__text reveal">
+          <p class="eyebrow eyebrow--light" data-i18n="promo.label">ESTILO DESTACADO</p>
+          <h2 class="promo__title" data-i18n="promo.title">Microrealismo</h2>
+          <p class="promo__sub" data-i18n="promo.sub">Detalle fotográfico.<br>A escala íntima.</p>
+          <a href="https://wa.me/573104023043?text=Hola!%20Estoy%20interesado%20en%20la%20promoci%C3%B3n%20de%20Microrealismo.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%3F%20%F0%9F%8E%A8"
+             target="_blank" rel="noopener"
+             class="btn btn--white btn--lg promo__btn"
+             data-i18n="promo.cta">Consultar promoción</a>
+        </div>
+        <div class="promo__img-wrap reveal">
+          <!-- Cambia esta imagen cuando quieras actualizar la promoción -->
+          <img src="resources/fotos-principales-album/Microrealismo.jpg"
+               alt="Tatuaje Microrealismo realizado en SKINK TATTOO HOUSE, Cali"
+               loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         ESTILOS GRID (mantenido del original)
+    ══════════════════════════════════ -->
     <div class="grid" id="estilos">
 
       <!-- BlackWork — dark -->
       <article class="card card--half card--dark reveal">
         <div class="card__body">
-          <p class="eyebrow eyebrow--light">Estilo</p>
-          <h2 class="card__title card__title--light">BlackWork</h2>
-          <p class="card__sub card__sub--light">Líneas limpias.<br>Contraste absoluto.</p>
+          <p class="eyebrow eyebrow--light" data-i18n="card.style">Estilo</p>
+          <h2 class="card__title card__title--light" data-i18n="card.blackwork">BlackWork</h2>
+          <p class="card__sub card__sub--light" data-i18n="card.blackwork.sub">Líneas limpias.<br>Contraste absoluto.</p>
           <div class="card__ctas">
-            <a href="#galeria" class="btn btn--white">Ver trabajos</a>
-            <a href="#reservar" class="btn btn--link-light">Agendar</a>
+            <a href="#galeria" class="btn btn--white" data-i18n="card.btn.works">Ver trabajos</a>
+            <a href="https://wa.me/573104023043?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20mi%20cita%20de%20tatuaje%20en%20SKINK%20TATTOO%20HOUSE.%20%F0%9F%8E%A8" target="_blank" rel="noopener" class="btn btn--link-light" data-i18n="card.btn.book">Agendar</a>
           </div>
         </div>
         <div class="card__img-wrap">
-          <img src="../resources/fotos-principales-album/BlackWork.jpg" alt="Estilo BlackWork" loading="lazy">
+          <img src="resources/fotos-principales-album/BlackWork.jpg" alt="Tatuaje BlackWork realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
         </div>
       </article>
 
       <!-- Color — light -->
       <article class="card card--half card--light reveal">
         <div class="card__body">
-          <p class="eyebrow eyebrow--dark">Estilo</p>
-          <h2 class="card__title card__title--dark">Color</h2>
-          <p class="card__sub card__sub--dark">Vibrante. Vivo.<br>Lleno de vida.</p>
+          <p class="eyebrow eyebrow--dark" data-i18n="card.style">Estilo</p>
+          <h2 class="card__title card__title--dark" data-i18n="card.color">Color</h2>
+          <p class="card__sub card__sub--dark" data-i18n="card.color.sub">Vibrante. Vivo.<br>Lleno de vida.</p>
           <div class="card__ctas">
-            <a href="#galeria" class="btn btn--blue">Ver trabajos</a>
-            <a href="#reservar" class="btn btn--link-dark">Agendar</a>
+            <a href="#galeria" class="btn btn--blue" data-i18n="card.btn.works">Ver trabajos</a>
+            <a href="https://wa.me/573104023043?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20mi%20cita%20de%20tatuaje%20en%20SKINK%20TATTOO%20HOUSE.%20%F0%9F%8E%A8" target="_blank" rel="noopener" class="btn btn--link-dark" data-i18n="card.btn.book">Agendar</a>
           </div>
         </div>
         <div class="card__img-wrap">
-          <img src="../resources/fotos-principales-album/Color.jpg" alt="Estilo Color" loading="lazy">
+          <img src="resources/fotos-principales-album/Color.jpg" alt="Tatuaje Color realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
         </div>
       </article>
 
       <!-- Lettering — light -->
       <article class="card card--half card--light reveal">
         <div class="card__body">
-          <p class="eyebrow eyebrow--dark">Estilo</p>
-          <h2 class="card__title card__title--dark">Lettering</h2>
-          <p class="card__sub card__sub--dark">Palabras que<br>permanecen.</p>
+          <p class="eyebrow eyebrow--dark" data-i18n="card.style">Estilo</p>
+          <h2 class="card__title card__title--dark" data-i18n="card.lettering">Lettering</h2>
+          <p class="card__sub card__sub--dark" data-i18n="card.lettering.sub">Palabras que<br>permanecen.</p>
           <div class="card__ctas">
-            <a href="#galeria" class="btn btn--blue">Ver trabajos</a>
-            <a href="#reservar" class="btn btn--link-dark">Agendar</a>
+            <a href="#galeria" class="btn btn--blue" data-i18n="card.btn.works">Ver trabajos</a>
+            <a href="https://wa.me/573104023043?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20mi%20cita%20de%20tatuaje%20en%20SKINK%20TATTOO%20HOUSE.%20%F0%9F%8E%A8" target="_blank" rel="noopener" class="btn btn--link-dark" data-i18n="card.btn.book">Agendar</a>
           </div>
         </div>
         <div class="card__img-wrap">
-          <img src="../resources/fotos-principales-album/Lettering.jpg" alt="Estilo Lettering" loading="lazy">
+          <img src="resources/fotos-principales-album/Lettering.jpg" alt="Tatuaje Lettering realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
         </div>
       </article>
 
       <!-- Minimalismo — dark -->
       <article class="card card--half card--dark reveal">
         <div class="card__body">
-          <p class="eyebrow eyebrow--light">Estilo</p>
-          <h2 class="card__title card__title--light">Minimalismo</h2>
-          <p class="card__sub card__sub--light">Menos es más.<br>Elegancia pura.</p>
+          <p class="eyebrow eyebrow--light" data-i18n="card.style">Estilo</p>
+          <h2 class="card__title card__title--light" data-i18n="card.minimalism">Minimalismo</h2>
+          <p class="card__sub card__sub--light" data-i18n="card.minimalism.sub">Menos es más.<br>Elegancia pura.</p>
           <div class="card__ctas">
-            <a href="#galeria" class="btn btn--white">Ver trabajos</a>
-            <a href="#reservar" class="btn btn--link-light">Agendar</a>
+            <a href="#galeria" class="btn btn--white" data-i18n="card.btn.works">Ver trabajos</a>
+            <a href="https://wa.me/573104023043?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20mi%20cita%20de%20tatuaje%20en%20SKINK%20TATTOO%20HOUSE.%20%F0%9F%8E%A8" target="_blank" rel="noopener" class="btn btn--link-light" data-i18n="card.btn.book">Agendar</a>
           </div>
         </div>
         <div class="card__img-wrap">
-          <img src="../resources/fotos-principales-album/Minimalismo.jpg" alt="Estilo Minimalismo" loading="lazy">
+          <img src="resources/fotos-principales-album/Minimalismo.jpg" alt="Tatuaje Minimalismo realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
         </div>
       </article>
 
       <!-- Microrealismo — full width dark -->
       <article class="card card--full card--dark reveal">
         <div class="card__body">
-          <p class="eyebrow eyebrow--light">Estilo destacado</p>
-          <h2 class="card__title card__title--light">Microrealismo</h2>
-          <p class="card__sub card__sub--light">Detalle fotográfico.<br>A escala íntima.</p>
+          <p class="eyebrow eyebrow--light" data-i18n="card.featured">Estilo destacado</p>
+          <h2 class="card__title card__title--light" data-i18n="card.micro">Microrealismo</h2>
+          <p class="card__sub card__sub--light" data-i18n="card.micro.sub">Detalle fotográfico.<br>A escala íntima.</p>
           <div class="card__ctas">
-            <a href="#galeria" class="btn btn--white">Ver trabajos</a>
-            <a href="#reservar" class="btn btn--link-light">Agendar</a>
+            <a href="#galeria" class="btn btn--white" data-i18n="card.btn.works">Ver trabajos</a>
+            <a href="https://wa.me/573104023043?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20mi%20cita%20de%20tatuaje%20en%20SKINK%20TATTOO%20HOUSE.%20%F0%9F%8E%A8" target="_blank" rel="noopener" class="btn btn--link-light" data-i18n="card.btn.book">Agendar</a>
           </div>
         </div>
         <div class="card__img-wrap card__img-wrap--wide">
-          <img src="../resources/fotos-principales-album/Microrealismo.jpg" alt="Estilo Microrealismo" loading="lazy">
+          <img src="resources/fotos-principales-album/Microrealismo.jpg" alt="Tatuaje Microrealismo realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
         </div>
       </article>
 
       <!-- Sombra — dark -->
       <article class="card card--half card--dark reveal">
         <div class="card__body">
-          <p class="eyebrow eyebrow--light">Estilo</p>
-          <h2 class="card__title card__title--light">Sombra</h2>
-          <p class="card__sub card__sub--light">Profundidad.<br>Dimensión real.</p>
+          <p class="eyebrow eyebrow--light" data-i18n="card.style">Estilo</p>
+          <h2 class="card__title card__title--light" data-i18n="card.shadow">Sombra</h2>
+          <p class="card__sub card__sub--light" data-i18n="card.shadow.sub">Profundidad.<br>Dimensión real.</p>
           <div class="card__ctas">
-            <a href="#galeria" class="btn btn--white">Ver trabajos</a>
-            <a href="#reservar" class="btn btn--link-light">Agendar</a>
+            <a href="#galeria" class="btn btn--white" data-i18n="card.btn.works">Ver trabajos</a>
+            <a href="https://wa.me/573104023043?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20mi%20cita%20de%20tatuaje%20en%20SKINK%20TATTOO%20HOUSE.%20%F0%9F%8E%A8" target="_blank" rel="noopener" class="btn btn--link-light" data-i18n="card.btn.book">Agendar</a>
           </div>
         </div>
         <div class="card__img-wrap">
-          <img src="../resources/sombra/1.jpg" alt="Estilo Sombra" loading="lazy">
+          <img src="resources/sombra/1.jpg" alt="Tatuaje Sombra realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
         </div>
       </article>
 
-      <!-- Espalda — light -->
+      <!-- Piezas de Espalda — light -->
       <article class="card card--half card--light reveal">
         <div class="card__body">
-          <p class="eyebrow eyebrow--dark">Especialidad</p>
-          <h2 class="card__title card__title--dark">Piezas de Espalda</h2>
-          <p class="card__sub card__sub--dark">Arte a gran escala.<br>Proyectos completos.</p>
+          <p class="eyebrow eyebrow--dark" data-i18n="card.specialty">Especialidad</p>
+          <h2 class="card__title card__title--dark" data-i18n="card.back">Piezas de Espalda</h2>
+          <p class="card__sub card__sub--dark" data-i18n="card.back.sub">Arte a gran escala.<br>Proyectos completos.</p>
           <div class="card__ctas">
-            <a href="#galeria" class="btn btn--blue">Ver trabajos</a>
-            <a href="#reservar" class="btn btn--link-dark">Agendar</a>
+            <a href="#galeria" class="btn btn--blue" data-i18n="card.btn.works">Ver trabajos</a>
+            <a href="https://wa.me/573104023043?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20mi%20cita%20de%20tatuaje%20en%20SKINK%20TATTOO%20HOUSE.%20%F0%9F%8E%A8" target="_blank" rel="noopener" class="btn btn--link-dark" data-i18n="card.btn.book">Agendar</a>
           </div>
         </div>
         <div class="card__img-wrap">
-          <img src="../resources/fotos-principales-album/Espalda.jpg" alt="Piezas de espalda" loading="lazy">
+          <img src="resources/fotos-principales-album/Espalda.jpg" alt="Piezas de espalda realizadas en SKINK TATTOO HOUSE, Cali" loading="lazy">
         </div>
       </article>
 
     </div>
 
-    <!-- GALERÍA CAROUSEL -->
+    <!-- ══════════════════════════════════
+         GALERÍA — TPG style (como el original, sin flechas)
+    ══════════════════════════════════ -->
     <section class="tpg" id="galeria">
       <div class="tpg__header reveal">
-        <h2>Galería reciente</h2>
-        <p>Una muestra de nuestros trabajos más recientes.</p>
+        <h2 data-i18n="gallery.title">Galería reciente</h2>
+        <p data-i18n="gallery.sub">Una muestra de nuestros trabajos más recientes.</p>
       </div>
       <div class="tpg__wrapper">
         <div class="tpg__track" id="tpg-track">
 
           <div class="tpg__slide">
-            <img src="../resources/blackwork/1.jpg" alt="BlackWork" loading="lazy">
-            <div class="tpg__info">
-              <p class="tpg__label">BlackWork</p>
-              <span class="tpg__tag">Estilo · Líneas que definen. Sin color, puro contraste.</span>
-              <a href="#reservar" class="btn btn--white">Agendar cita</a>
-            </div>
+            <img src="resources/gallery/2.jpg" alt="Tatuaje realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
           </div>
-
           <div class="tpg__slide">
-            <img src="../resources/color/3.jpg" alt="Color" loading="lazy">
-            <div class="tpg__info">
-              <p class="tpg__label">Color</p>
-              <span class="tpg__tag">Estilo · El color que lleva tu historia. Vibrante y duradero.</span>
-              <a href="#reservar" class="btn btn--white">Agendar cita</a>
-            </div>
+            <img src="resources/gallery/5.jpg" alt="Tatuaje realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
           </div>
-
           <div class="tpg__slide">
-            <img src="../resources/microrealismo/2.jpg" alt="Microrealismo" loading="lazy">
-            <div class="tpg__info">
-              <p class="tpg__label">Microrealismo</p>
-              <span class="tpg__tag">Técnica · Detalle fotográfico permanente en tu piel.</span>
-              <a href="#reservar" class="btn btn--white">Agendar cita</a>
-            </div>
+            <img src="resources/gallery/10.jpg" alt="Tatuaje realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
           </div>
-
           <div class="tpg__slide">
-            <img src="../resources/lettering/2.jpg" alt="Lettering" loading="lazy">
-            <div class="tpg__info">
-              <p class="tpg__label">Lettering</p>
-              <span class="tpg__tag">Estilo · Las palabras que quieres llevar contigo.</span>
-              <a href="#reservar" class="btn btn--white">Agendar cita</a>
-            </div>
+            <img src="resources/gallery/12.jpg" alt="Tatuaje realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
           </div>
-
           <div class="tpg__slide">
-            <img src="../resources/minimalismo/3.jpg" alt="Minimalismo" loading="lazy">
-            <div class="tpg__info">
-              <p class="tpg__label">Minimalismo</p>
-              <span class="tpg__tag">Estilo · Menos es más. Elegancia en cada trazo.</span>
-              <a href="#reservar" class="btn btn--white">Agendar cita</a>
-            </div>
+            <img src="resources/gallery/14.jpg" alt="Tatuaje realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
           </div>
-
           <div class="tpg__slide">
-            <img src="../resources/sombra/2.jpg" alt="Sombra" loading="lazy">
-            <div class="tpg__info">
-              <p class="tpg__label">Sombra</p>
-              <span class="tpg__tag">Técnica · Profundidad y dimensión en cada pieza.</span>
-              <a href="#reservar" class="btn btn--white">Agendar cita</a>
-            </div>
+            <img src="resources/gallery/WhatsApp Image 2026-05-07 at 7.25.38 PM.jpeg" alt="Tatuaje realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
           </div>
-
           <div class="tpg__slide">
-            <img src="../resources/espalda/1.jpg" alt="Pieza de Espalda" loading="lazy">
-            <div class="tpg__info">
-              <p class="tpg__label">Piezas de Espalda</p>
-              <span class="tpg__tag">Gran formato · Arte que transforma. Proyectos completos.</span>
-              <a href="#reservar" class="btn btn--white">Agendar cita</a>
-            </div>
+            <img src="resources/gallery/WhatsApp Image 2026-05-07 at 7.26.08 PM.jpeg" alt="Tatuaje realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
+          </div>
+          <div class="tpg__slide">
+            <img src="resources/gallery/WhatsApp Image 2026-05-07 at 7.26.09 PM.jpeg" alt="Tatuaje realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
+          </div>
+          <div class="tpg__slide">
+            <img src="resources/gallery/WhatsApp Image 2026-05-07 at 8.15.31 PM.jpeg" alt="Tatuaje realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
+          </div>
+          <div class="tpg__slide">
+            <img src="resources/gallery/WhatsApp Image 2026-05-07 at 8.15.31 PM (1).jpeg" alt="Tatuaje realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
+          </div>
+          <div class="tpg__slide">
+            <img src="resources/gallery/WhatsApp Image 2026-05-07 at 8.15.31 PM (2).jpeg" alt="Tatuaje realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
+          </div>
+          <div class="tpg__slide">
+            <img src="resources/gallery/WhatsApp Image 2026-05-07 at 8.15.31 PM (3).jpeg" alt="Tatuaje realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
+          </div>
+          <div class="tpg__slide">
+            <img src="resources/gallery/WhatsApp Image 2026-05-07 at 8.20.56 PM.jpeg" alt="Tatuaje realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
           </div>
 
         </div>
@@ -260,101 +370,75 @@
       <div class="tpg__dots" id="tpg-dots"></div>
     </section>
 
-    <!-- CTA RESERVAR -->
+    <!-- ══════════════════════════════════
+         CTA BANNER (mantenido del original)
+    ══════════════════════════════════ -->
     <section class="cta-banner" id="reservar">
       <div class="cta-banner__content reveal">
-        <h2>¿Listo para tu próximo tattoo?</h2>
-        <p>Agenda tu consulta gratuita. Te asesoramos en el diseño y te damos un presupuesto sin compromiso.</p>
-        <a href="#contacto" class="btn btn--white btn--lg">Agendar cita ahora</a>
-      </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section class="contact" id="contacto">
-      <div class="contact__grid reveal">
-        <div class="contact__item">
-          <h3>Ubicación</h3>
-          <p>Calle 10 # 30-72 Local 102<br>Cali, Colombia</p>
-        </div>
-        <div class="contact__item">
-          <h3>Horario</h3>
-          <p>Lunes a Sábado<br>10:00 am – 8:00 pm</p>
-        </div>
-        <div class="contact__item">
-          <h3>Contacto</h3>
-          <p>310 402 3043<br>skinktattohouse19@gmail.com</p>
-        </div>
+        <h2 data-i18n="cta.title">¿Listo para tu próximo tattoo?</h2>
+        <p data-i18n="cta.sub">Agenda tu consulta gratuita. Te asesoramos en el diseño y te damos un presupuesto sin compromiso.</p>
+        <a href="https://wa.me/573104023043?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20mi%20cita%20de%20tatuaje%20en%20SKINK%20TATTOO%20HOUSE.%20%F0%9F%8E%A8"
+           target="_blank" rel="noopener"
+           class="btn btn--white btn--lg"
+           data-i18n="cta.btn">Agendar cita ahora</a>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
+  <!-- ══════════════════════════════════
+       FOOTER
+  ══════════════════════════════════ -->
   <footer class="footer">
     <div class="footer__inner">
-      <p class="footer__tagline">Arte en tu piel. Diseño personalizado. Técnica de precisión.</p>
+      <p class="footer__tagline" data-i18n="footer.tagline">Arte en tu piel. Diseño personalizado. Técnica de precisión.</p>
       <div class="footer__cols">
+
         <div class="footer__col">
-          <h4>Estilos</h4>
+          <h4 data-i18n="footer.studio">Studio</h4>
           <ul>
-            <li><a href="#estilos">BlackWork</a></li>
-            <li><a href="#estilos">Color</a></li>
-            <li><a href="#estilos">Lettering</a></li>
-            <li><a href="#estilos">Minimalismo</a></li>
-            <li><a href="#estilos">Microrealismo</a></li>
-            <li><a href="#estilos">Sombra</a></li>
+            <li><a href="#galeria" data-i18n="nav.gallery">Galería</a></li>
+            <li>
+              <a href="https://share.google/bfrcZeiuWPF4H82DL" target="_blank" rel="noopener" data-i18n="nav.location">Ubicación</a>
+            </li>
+            <li>
+              <a href="https://wa.me/573104023043?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20mi%20cita%20de%20tatuaje%20en%20SKINK%20TATTOO%20HOUSE.%20%F0%9F%8E%A8"
+                 target="_blank" rel="noopener"
+                 data-i18n="nav.cta">Agendar cita</a>
+            </li>
           </ul>
         </div>
+
         <div class="footer__col">
-          <h4>Studio</h4>
+          <h4 data-i18n="footer.care">Cuidado</h4>
           <ul>
-            <li><a href="#galeria">Galería</a></li>
-            <li><a href="#artistas">Artistas</a></li>
-            <li><a href="#contacto">Ubicación</a></li>
-            <li><a href="#reservar">Agendar cita</a></li>
+            <li><a href="/proceso-sanado/" data-i18n="care.healing">Proceso de sanado</a></li>
+            <li><a href="/cuidados-post-tattoo/" data-i18n="care.post">Cuidados post-tattoo</a></li>
+            <li><a href="/preparacion-previa/" data-i18n="care.prep">Preparación previa</a></li>
+            <li><a href="/preguntas-frecuentes/" data-i18n="care.faq">Preguntas frecuentes</a></li>
           </ul>
         </div>
+
         <div class="footer__col">
-          <h4>Cuidado</h4>
+          <h4 data-i18n="footer.follow">Síguenos</h4>
           <ul>
-            <li><a href="#">Proceso de sanado</a></li>
-            <li><a href="#">Cuidados post-tattoo</a></li>
-            <li><a href="#">Preparación previa</a></li>
-            <li><a href="#">Preguntas frecuentes</a></li>
+            <li><a href="https://www.instagram.com/skinktattoohouse/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/skinktattoohouse" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.tiktok.com/@skinktattoohouse?_r=1&_t=ZS-96LJ3GfzHzZ" target="_blank" rel="noopener">TikTok</a></li>
           </ul>
         </div>
-        <div class="footer__col">
-          <h4>Síguenos</h4>
-          <ul>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">TikTok</a></li>
-            <li><a href="#">Facebook</a></li>
-          </ul>
-        </div>
+
       </div>
       <div class="footer__bottom">
-        <p>Copyright © 2025 Skink Tattoo Studio. Todos los derechos reservados.</p>
+        <p data-i18n="footer.copyright">Copyright © 2025 Skink Tattoo Studio. Todos los derechos reservados.</p>
         <div class="footer__legal">
-          <a href="#">Privacidad</a>
-          <a href="#">Términos</a>
+          <a href="/privacidad/" data-i18n="footer.privacy">Privacidad</a>
+          <a href="/terminos/" data-i18n="footer.terms">Términos</a>
         </div>
       </div>
     </div>
   </footer>
 
   <script src="script.js"></script>
-
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
 </body>
-
 </html>
