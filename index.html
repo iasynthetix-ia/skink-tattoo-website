@@ -64,7 +64,7 @@
 
       <!-- Logo -->
       <a href="#" class="nav-logo">
-        <img src="resources/home/logo-skink.png" alt="Skink Tattoo House" class="logo-img">
+        <img src="resources/new-images/image_nav.PNG" alt="Skink Tattoo House" class="logo-img">
       </a>
 
       <!-- Desktop links -->
@@ -248,8 +248,10 @@
         </div>
       </article>
 
-      <!-- Minimalismo — dark -->
-      <article class="card card--half card--dark reveal">
+      <!-- Minimalismo — ghost 3D -->
+      <article class="card card--half card--dark card--minimalism reveal">
+        <div class="card__bg" style="background-image: url('resources/new-images/fondo-ghost.jpeg')"></div>
+        <div class="card__overlay card__overlay--minimalism"></div>
         <div class="card__body">
           <p class="eyebrow eyebrow--light" data-i18n="card.style">Estilo</p>
           <h2 class="card__title card__title--light" data-i18n="card.minimalism">Minimalismo</h2>
@@ -259,24 +261,12 @@
             <a href="https://wa.me/573104023043?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20mi%20cita%20de%20tatuaje%20en%20SKINK%20TATTOO%20HOUSE.%20%F0%9F%8E%A8" target="_blank" rel="noopener" class="btn btn--link-light" data-i18n="card.btn.book">Agendar</a>
           </div>
         </div>
-        <div class="card__img-wrap">
-          <img src="resources/fotos-principales-album/Minimalismo.jpg" alt="Tatuaje Minimalismo realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
-        </div>
-      </article>
-
-      <!-- Microrealismo — full width dark -->
-      <article class="card card--full card--dark reveal">
-        <div class="card__body">
-          <p class="eyebrow eyebrow--light" data-i18n="card.featured">Estilo destacado</p>
-          <h2 class="card__title card__title--light" data-i18n="card.micro">Microrealismo</h2>
-          <p class="card__sub card__sub--light" data-i18n="card.micro.sub">Detalle fotográfico.<br>A escala íntima.</p>
-          <div class="card__ctas">
-            <a href="#galeria" class="btn btn--white" data-i18n="card.btn.works">Ver trabajos</a>
-            <a href="https://wa.me/573104023043?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20mi%20cita%20de%20tatuaje%20en%20SKINK%20TATTOO%20HOUSE.%20%F0%9F%8E%A8" target="_blank" rel="noopener" class="btn btn--link-light" data-i18n="card.btn.book">Agendar</a>
+        <div class="ghost-scene" id="ghost-scene">
+          <div class="ghost-3d" id="ghost-3d">
+            <img src="resources/new-images/ghost_1.png" class="ghost ghost-1" alt="">
+            <img src="resources/new-images/ghost_2.png" class="ghost ghost-2" alt="">
+            <img src="resources/new-images/ghost_3.png" class="ghost ghost-3" alt="">
           </div>
-        </div>
-        <div class="card__img-wrap card__img-wrap--wide">
-          <img src="resources/fotos-principales-album/Microrealismo.jpg" alt="Tatuaje Microrealismo realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
         </div>
       </article>
 
@@ -385,6 +375,19 @@
     </section>
 
   </main>
+
+  <!-- ══════════════════════════════════
+       GALLERY MODAL
+  ══════════════════════════════════ -->
+  <div id="gallery-modal" class="gallery-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="gallery-modal__overlay"></div>
+    <div class="gallery-modal__content">
+      <img class="gallery-modal__img" src="" alt="Tatuaje realizado en SKINK TATTOO HOUSE, Cali">
+    </div>
+    <button class="gallery-modal__close" aria-label="Cerrar">&times;</button>
+    <button class="gallery-modal__prev" aria-label="Imagen anterior">&#8592;</button>
+    <button class="gallery-modal__next" aria-label="Imagen siguiente">&#8594;</button>
+  </div>
 
   <!-- ══════════════════════════════════
        FOOTER

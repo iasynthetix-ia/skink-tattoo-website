@@ -317,3 +317,120 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     window.scrollTo({ top, behavior: 'smooth' });
   });
 });
+
+// ── Ghost 3D interaction (Minimalismo card) ───────────────
+(function () {
+  const scene  = document.getElementById('ghost-scene');
+  const ghost3d = document.getElementById('ghost-3d');
+  if (!scene || !ghost3d) return;
+
+  let targetRX = 0, targetRY = 0;
+  let currentRX = 0, currentRY = 0;
+
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function tick() {
+    currentRX = lerp(currentRX, targetRX, 0.1);
+    currentRY = lerp(currentRY, targetRY, 0.1);
+    ghost3d.style.transform = `rotateX(${currentRX}deg) rotateY(${currentRY}deg)`;
+    requestAnimationFrame(tick);
+  }
+  tick();
+
+  scene.addEventListener('mousemove', e => {
+    const r = scene.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width  - 0.5;
+    const y = (e.clientY - r.top)  / r.height - 0.5;
+    targetRX = -y * 28;
+    targetRY =  x * 28;
+  });
+
+  scene.addEventListener('mouseleave', () => { targetRX = 0; targetRY = 0; });
+
+  let touchStartX = 0, touchStartY = 0;
+  scene.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  scene.addEventListener('touchmove', e => {
+    const r = scene.getBoundingClientRect();
+    const x = (e.touches[0].clientX - r.left) / r.width  - 0.5;
+    const y = (e.touches[0].clientY - r.top)  / r.height - 0.5;
+    targetRX = -y * 22;
+    targetRY =  x * 22;
+  }, { passive: true });
+
+  scene.addEventListener('touchend', () => { targetRX = 0; targetRY = 0; });
+}());
+
+// ── Gallery Modal ─────────────────────────────────────────
+(function () {
+  const modal      = document.getElementById('gallery-modal');
+  if (!modal) return;
+
+  const modalImg   = modal.querySelector('.gallery-modal__img');
+  const overlay    = modal.querySelector('.gallery-modal__overlay');
+  const btnClose   = modal.querySelector('.gallery-modal__close');
+  const btnPrev    = modal.querySelector('.gallery-modal__prev');
+  const btnNext    = modal.querySelector('.gallery-modal__next');
+  const allSlides  = Array.from(document.querySelectorAll('.tpg__slide'));
+
+  let activeIdx = 0;
+
+  function srcs() {
+    return allSlides.map(s => s.querySelector('img').getAttribute('src'));
+  }
+
+  function open(idx) {
+    activeIdx = idx;
+    modalImg.src = srcs()[activeIdx];
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    btnClose.focus();
+  }
+
+  function close() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function prev() {
+    const list = srcs();
+    activeIdx  = (activeIdx - 1 + list.length) % list.length;
+    modalImg.src = list[activeIdx];
+  }
+
+  function next() {
+    const list = srcs();
+    activeIdx  = (activeIdx + 1) % list.length;
+    modalImg.src = list[activeIdx];
+  }
+
+  btnClose.addEventListener('click', close);
+  overlay.addEventListener('click', close);
+  btnPrev.addEventListener('click', prev);
+  btnNext.addEventListener('click', next);
+
+  document.addEventListener('keydown', e => {
+    if (!modal.classList.contains('is-open')) return;
+    if (e.key === 'Escape')     close();
+    if (e.key === 'ArrowLeft')  prev();
+    if (e.key === 'ArrowRight') next();
+  });
+
+  // Click on active slide — distinguish from drag
+  let clickStartX = 0;
+  allSlides.forEach((slide, i) => {
+    slide.addEventListener('mousedown',  e => { clickStartX = e.clientX; });
+    slide.addEventListener('touchstart', e => { clickStartX = e.touches[0].clientX; }, { passive: true });
+
+    slide.addEventListener('click', e => {
+      if (!slide.classList.contains('is-active')) return;
+      if (Math.abs(e.clientX - clickStartX) > 10) return;
+      open(i);
+    });
+  });
+}());
