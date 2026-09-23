@@ -863,7 +863,7 @@ ul  { list-style: none; }
 
 /* Fantasma central — primer plano, abajo al centro */
 .ghost-1 {
-  width: clamp(230px, 88%, 660px);
+  width: clamp(230px, 92%, 700px);
   bottom: 0;
   left: 50%;
   z-index: 3;
@@ -873,7 +873,7 @@ ul  { list-style: none; }
 
 /* Fantasma izquierdo — segundo plano, arriba a la izquierda */
 .ghost-2 {
-  width: clamp(185px, 71%, 530px);
+  width: clamp(185px, 75%, 570px);
   top: 0;
   left: -6%;
   z-index: 2;
@@ -884,7 +884,7 @@ ul  { list-style: none; }
 
 /* Fantasma derecho — tercer plano, medio a la derecha */
 .ghost-3 {
-  width: clamp(172px, 66%, 490px);
+  width: clamp(172px, 70%, 520px);
   top: 28%;
   right: -6%;
   z-index: 1;
@@ -1033,7 +1033,23 @@ ul  { list-style: none; }
     height: 40px;
     font-size: 1.3rem;
   }
-  .ghost-scene { height: 360px; }
-  .ghost-2 { left: -4%; }
-  .ghost-3 { right: -4%; }
+  .ghost-scene { height: 420px; }
+
+  /* Tamaños mobile */
+  .ghost-1 { width: 72vw; }
+  .ghost-2 { width: 62vw; }
+  .ghost-3 { width: 56vw; }
+
+  /* Posiciones mobile — izquierda centro-alto, derecha centro-bajo, abajo centro */
+  .ghost-2 {
+    top: 18%;
+    left: 3%;
+    right: auto;
+  }
+  .ghost-3 {
+    top: 44%;
+    right: 3%;
+    left: auto;
+  }
+  /* ghost-1 mantiene bottom:0 left:50% del estilo base */
 }
