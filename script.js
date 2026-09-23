@@ -151,7 +151,7 @@ const translations = {
     'styles.micro':     'Microrealismo',
     'styles.realism':   'Realismo',
     'styles.anime':     'Anime',
-    'hero.title':       'Arte en tu piel.',
+    'hero.title':       'Arte en tu piel ✨',
     'hero.subtitle':    'Diseño personalizado.<br>Técnica de precisión.',
     'promo.label':      'ESTILO DESTACADO',
     'promo.title':      'Microrealismo',
