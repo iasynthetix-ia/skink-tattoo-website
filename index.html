@@ -64,7 +64,7 @@
 
       <!-- Logo -->
       <a href="#" class="nav-logo">
-        <img src="resources/new-images/image_nav.PNG" alt="Skink Tattoo House" class="logo-img">
+        <img src="resources/home/logo_navbar.png" alt="Skink Tattoo House" class="logo-img">
       </a>
 
       <!-- Desktop links -->
@@ -157,11 +157,13 @@
          HERO
     ══════════════════════════════════ -->
     <section class="card card--hero reveal-hero">
-      <div class="card__bg" style="background-image: url('resources/home/portada-principal-skink.jpg')"></div>
+      <div class="card__bg" style="background-image: url('resources/home/r5.jpg')"></div>
       <div class="card__overlay"></div>
+      <img src="resources/home/logo_skink_portada.PNG" alt="Skink Tattoo House" class="hero-logo-float hero-logo-float--left">
+      <img src="resources/home/logo_skink_portada.PNG" alt="Skink Tattoo House" class="hero-logo-float hero-logo-float--right">
       <div class="card__body card__body--center">
         <p class="eyebrow eyebrow--light">Skink Tattoo Studio</p>
-        <h1 class="card__title card__title--light" data-i18n="hero.title">Arte en tu piel (prueba de deploy) ✨</h1>
+        <h1 class="card__title card__title--light" data-i18n="hero.title">Arte en tu piel</h1>
         <p class="card__sub card__sub--light" data-i18n="hero.subtitle">Diseño personalizado.<br>Técnica de precisión.</p>
         <div class="hero-cta">
           <a href="https://wa.me/573104023043?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20mi%20cita%20de%20tatuaje%20en%20SKINK%20TATTOO%20HOUSE.%20%F0%9F%8E%A8"
@@ -175,22 +177,17 @@
     <!-- ══════════════════════════════════
          PROMOCIÓN DESTACADA
     ══════════════════════════════════ -->
-    <section class="promo" id="promocion">
-      <div class="promo__inner">
+    <section class="promo promo--fullbg" id="promocion">
+      <div class="promo__overlay"></div>
+      <div class="promo__inner promo__inner--centered">
         <div class="promo__text reveal">
           <p class="eyebrow eyebrow--light" data-i18n="promo.label">ESTILO DESTACADO</p>
-          <h2 class="promo__title" data-i18n="promo.title">Microrealismo</h2>
-          <p class="promo__sub" data-i18n="promo.sub">Detalle fotográfico.<br>A escala íntima.</p>
+          <h2 class="promo__title" id="promo-title">Microrealismo</h2>
+          <p class="promo__sub" id="promo-sub">Detalle fotográfico.<br>A escala íntima.</p>
           <a href="https://wa.me/573104023043?text=Hola!%20Estoy%20interesado%20en%20la%20promoci%C3%B3n%20de%20Microrealismo.%20%C2%BFMe%20dan%20m%C3%A1s%20informaci%C3%B3n%3F%20%F0%9F%8E%A8"
              target="_blank" rel="noopener"
-             class="btn btn--white btn--lg promo__btn"
-             data-i18n="promo.cta">Consultar promoción</a>
-        </div>
-        <div class="promo__img-wrap reveal">
-          <!-- Cambia esta imagen cuando quieras actualizar la promoción -->
-          <img src="resources/fotos-principales-album/Microrealismo.jpg"
-               alt="Tatuaje Microrealismo realizado en SKINK TATTOO HOUSE, Cali"
-               loading="lazy">
+             id="promo-btn"
+             class="btn btn--white btn--lg promo__btn">Consultar promoción</a>
         </div>
       </div>
     </section>
@@ -200,51 +197,51 @@
     ══════════════════════════════════ -->
     <div class="grid" id="estilos">
 
-      <!-- BlackWork — dark -->
-      <article class="card card--half card--dark reveal">
+      <!-- Sombra — fondo completo (primer cuadro) -->
+      <article class="card card--half card--dark card--bg-full card--tall reveal"
+               style="background-image: url('resources/home/IMG_7520.jpeg')">
+        <div class="card__overlay"></div>
         <div class="card__body">
           <p class="eyebrow eyebrow--light" data-i18n="card.style">Estilo</p>
-          <h2 class="card__title card__title--light" data-i18n="card.blackwork">BlackWork</h2>
-          <p class="card__sub card__sub--light" data-i18n="card.blackwork.sub">Líneas limpias.<br>Contraste absoluto.</p>
+          <h2 class="card__title card__title--light" data-i18n="card.shadow">Sombra</h2>
+          <p class="card__sub card__sub--light" data-i18n="card.shadow.sub">Profundidad.<br>Dimensión real.</p>
           <div class="card__ctas">
             <a href="#galeria" class="btn btn--white" data-i18n="card.btn.works">Ver trabajos</a>
             <a href="https://wa.me/573104023043?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20mi%20cita%20de%20tatuaje%20en%20SKINK%20TATTOO%20HOUSE.%20%F0%9F%8E%A8" target="_blank" rel="noopener" class="btn btn--link-light" data-i18n="card.btn.book">Agendar</a>
           </div>
         </div>
-        <div class="card__img-wrap">
-          <img src="resources/fotos-principales-album/BlackWork.jpg" alt="Tatuaje BlackWork realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
+      </article>
+
+      <!-- Color — dark bg-full -->
+      <article class="card card--half card--dark card--bg-full card--tall reveal"
+               style="background-image: url('resources/fotos-principales-album/Color.jpg')">
+        <div class="card__overlay"></div>
+        <div class="card__body">
+          <p class="eyebrow eyebrow--light" data-i18n="card.style">Estilo</p>
+          <h2 class="card__title card__title--light" data-i18n="card.color">Color</h2>
+          <p class="card__sub card__sub--light" data-i18n="card.color.sub">Vibrante. Vivo.<br>Lleno de vida.</p>
+          <div class="card__ctas">
+            <a href="#galeria" class="btn btn--white" data-i18n="card.btn.works">Ver trabajos</a>
+            <a href="https://wa.me/573104023043?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20mi%20cita%20de%20tatuaje%20en%20SKINK%20TATTOO%20HOUSE.%20%F0%9F%8E%A8" target="_blank" rel="noopener" class="btn btn--link-light" data-i18n="card.btn.book">Agendar</a>
+          </div>
         </div>
       </article>
 
-      <!-- Color — light -->
-      <article class="card card--half card--light reveal">
+      <!-- Microrealismo — dark bg-full + floating sneaker -->
+      <article class="card card--half card--dark card--bg-full reveal"
+               style="background-image: url('resources/home/IMG_7521.jpeg')">
+        <div class="card__overlay"></div>
         <div class="card__body">
-          <p class="eyebrow eyebrow--dark" data-i18n="card.style">Estilo</p>
-          <h2 class="card__title card__title--dark" data-i18n="card.color">Color</h2>
-          <p class="card__sub card__sub--dark" data-i18n="card.color.sub">Vibrante. Vivo.<br>Lleno de vida.</p>
+          <p class="eyebrow eyebrow--light" data-i18n="card.style">Estilo</p>
+          <h2 class="card__title card__title--light" data-i18n="card.micro">Microrealismo</h2>
+          <p class="card__sub card__sub--light" data-i18n="card.micro.sub">Detalle fotográfico.<br>A escala íntima.</p>
           <div class="card__ctas">
-            <a href="#galeria" class="btn btn--blue" data-i18n="card.btn.works">Ver trabajos</a>
-            <a href="https://wa.me/573104023043?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20mi%20cita%20de%20tatuaje%20en%20SKINK%20TATTOO%20HOUSE.%20%F0%9F%8E%A8" target="_blank" rel="noopener" class="btn btn--link-dark" data-i18n="card.btn.book">Agendar</a>
+            <a href="#galeria" class="btn btn--white" data-i18n="card.btn.works">Ver trabajos</a>
+            <a href="https://wa.me/573104023043?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20mi%20cita%20de%20tatuaje%20en%20SKINK%20TATTOO%20HOUSE.%20%F0%9F%8E%A8" target="_blank" rel="noopener" class="btn btn--link-light" data-i18n="card.btn.book">Agendar</a>
           </div>
         </div>
-        <div class="card__img-wrap">
-          <img src="resources/fotos-principales-album/Color.jpg" alt="Tatuaje Color realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
-        </div>
-      </article>
-
-      <!-- Lettering — light -->
-      <article class="card card--half card--light reveal">
-        <div class="card__body">
-          <p class="eyebrow eyebrow--dark" data-i18n="card.style">Estilo</p>
-          <h2 class="card__title card__title--dark" data-i18n="card.lettering">Lettering</h2>
-          <p class="card__sub card__sub--dark" data-i18n="card.lettering.sub">Palabras que<br>permanecen.</p>
-          <div class="card__ctas">
-            <a href="#galeria" class="btn btn--blue" data-i18n="card.btn.works">Ver trabajos</a>
-            <a href="https://wa.me/573104023043?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20mi%20cita%20de%20tatuaje%20en%20SKINK%20TATTOO%20HOUSE.%20%F0%9F%8E%A8" target="_blank" rel="noopener" class="btn btn--link-dark" data-i18n="card.btn.book">Agendar</a>
-          </div>
-        </div>
-        <div class="card__img-wrap">
-          <img src="resources/fotos-principales-album/Lettering.jpg" alt="Tatuaje Lettering realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
+        <div class="sneaker-scene">
+          <img src="resources/home/IMG_7523.png" class="sneaker-float" alt="">
         </div>
       </article>
 
@@ -270,35 +267,36 @@
         </div>
       </article>
 
-      <!-- Sombra — dark -->
-      <article class="card card--half card--dark reveal">
+      <!-- Academia Skink — DBZ bg + Goku volando -->
+      <article class="card card--half card--dark card--bg-full card--tall reveal"
+               style="background-image: url('resources/home/IMG_7485.jpeg'); background-position: center 40%;">
+        <div class="card__overlay" style="background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.55) 100%);"></div>
         <div class="card__body">
-          <p class="eyebrow eyebrow--light" data-i18n="card.style">Estilo</p>
-          <h2 class="card__title card__title--light" data-i18n="card.shadow">Sombra</h2>
-          <p class="card__sub card__sub--light" data-i18n="card.shadow.sub">Profundidad.<br>Dimensión real.</p>
+          <p class="eyebrow eyebrow--light">Academia</p>
+          <h2 class="card__title card__title--light">Academia Skink</h2>
+          <p class="card__sub card__sub--light">Aprende a tatuar.<br>Domina el arte.</p>
           <div class="card__ctas">
-            <a href="#galeria" class="btn btn--white" data-i18n="card.btn.works">Ver trabajos</a>
-            <a href="https://wa.me/573104023043?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20mi%20cita%20de%20tatuaje%20en%20SKINK%20TATTOO%20HOUSE.%20%F0%9F%8E%A8" target="_blank" rel="noopener" class="btn btn--link-light" data-i18n="card.btn.book">Agendar</a>
+            <a href="/academia-skink/" class="btn btn--white">Ver curso</a>
+            <a href="/academia-skink/#comprar" class="btn btn--link-light">Comprar</a>
           </div>
         </div>
-        <div class="card__img-wrap">
-          <img src="resources/sombra/1.jpg" alt="Tatuaje Sombra realizado en SKINK TATTOO HOUSE, Cali" loading="lazy">
+        <div class="goku-scene">
+          <img src="resources/home/IMG_7484.png" class="goku-float" alt="">
         </div>
       </article>
 
-      <!-- Piezas de Espalda — light -->
-      <article class="card card--half card--light reveal">
+      <!-- Tienda Skink -->
+      <article class="card card--half card--dark card--bg-full card--tall reveal"
+               style="background-image: url('resources/home/f8.jpg'); background-position: center 60%;">
+        <div class="card__overlay" style="background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.6) 100%);"></div>
         <div class="card__body">
-          <p class="eyebrow eyebrow--dark" data-i18n="card.specialty">Especialidad</p>
-          <h2 class="card__title card__title--dark" data-i18n="card.back">Piezas de Espalda</h2>
-          <p class="card__sub card__sub--dark" data-i18n="card.back.sub">Arte a gran escala.<br>Proyectos completos.</p>
+          <p class="eyebrow eyebrow--light">Skink Store</p>
+          <h2 class="card__title card__title--light">Tienda</h2>
+          <p class="card__sub card__sub--light">Tintas, agujas<br>y más.</p>
           <div class="card__ctas">
-            <a href="#galeria" class="btn btn--blue" data-i18n="card.btn.works">Ver trabajos</a>
-            <a href="https://wa.me/573104023043?text=Hola!%20Me%20gustar%C3%ADa%20agendar%20mi%20cita%20de%20tatuaje%20en%20SKINK%20TATTOO%20HOUSE.%20%F0%9F%8E%A8" target="_blank" rel="noopener" class="btn btn--link-dark" data-i18n="card.btn.book">Agendar</a>
+            <a href="/tienda/" class="btn btn--white">Ver artículos</a>
+            <a href="/tienda/#comprar" class="btn btn--link-light">Comprar</a>
           </div>
-        </div>
-        <div class="card__img-wrap">
-          <img src="resources/fotos-principales-album/Espalda.jpg" alt="Piezas de espalda realizadas en SKINK TATTOO HOUSE, Cali" loading="lazy">
         </div>
       </article>
 
@@ -308,10 +306,6 @@
          GALERÍA — TPG style (como el original, sin flechas)
     ══════════════════════════════════ -->
     <section class="tpg" id="galeria">
-      <div class="tpg__header reveal">
-        <h2 data-i18n="gallery.title">Galería reciente</h2>
-        <p data-i18n="gallery.sub">Una muestra de nuestros trabajos más recientes.</p>
-      </div>
       <div class="tpg__wrapper">
         <div class="tpg__track" id="tpg-track">
 

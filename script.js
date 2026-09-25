@@ -1,3 +1,23 @@
+// ── Promo dinámica desde promo.json ──────────────────────
+(function () {
+  const section = document.getElementById('promocion');
+  const title   = document.getElementById('promo-title');
+  const sub     = document.getElementById('promo-sub');
+  const btn     = document.getElementById('promo-btn');
+  if (!section) return;
+
+  fetch('promo.json?v=' + Date.now())
+    .then(r => r.json())
+    .then(d => {
+      if (d.image)      section.style.backgroundImage = `url('${d.image}')`;
+      if (d.title)      title.textContent = d.title;
+      if (d.sub)        sub.innerHTML = d.sub.replace(/\n/g, '<br>');
+      if (d.btnText)    btn.textContent = d.btnText;
+      if (d.waMessage)  btn.href = 'https://wa.me/573104023043?text=' + encodeURIComponent(d.waMessage);
+    })
+    .catch(() => { /* si falla el fetch, los valores del HTML se mantienen */ });
+}());
+
 // ── Hamburger menu ────────────────────────────────────────
 const hamburger = document.getElementById('hamburger');
 const navMobile = document.getElementById('nav-mobile');
@@ -151,7 +171,7 @@ const translations = {
     'styles.micro':     'Microrealismo',
     'styles.realism':   'Realismo',
     'styles.anime':     'Anime',
-    'hero.title':       'Arte en tu piel ✨',
+    'hero.title':       'Arte en tu piel',
     'hero.subtitle':    'Diseño personalizado.<br>Técnica de precisión.',
     'promo.label':      'ESTILO DESTACADO',
     'promo.title':      'Microrealismo',
