@@ -27,6 +27,9 @@ function applyPromoLang(lang) {
     .then(r => r.json())
     .then(d => {
       _promoData = d;
+      const hasContent = d.image || d.title || d.sub;
+      section.style.display = hasContent ? '' : 'none';
+      if (!hasContent) return;
       if (d.image)     section.style.backgroundImage = `url('${d.image}')`;
       if (d.waMessage) document.getElementById('promo-btn').href =
         'https://wa.me/573104023043?text=' + encodeURIComponent(d.waMessage);

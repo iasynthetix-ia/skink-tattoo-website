@@ -64,8 +64,18 @@ if ($auth && isset($_POST['action']) && $_POST['action'] === 'save') {
         $newPromo['btnText_en'] = $promo['btnText_en'] ?? '';
     }
 
+    // ── Eliminar imagen si se marcó el checkbox ──────────────────────────────
+    if (!empty($_POST['clear_image'])) {
+        $oldImage = $promo['image'] ?? '';
+        if (strpos($oldImage, UPLOADS_PATH) === 0) {
+            $oldFile = __DIR__ . '/../' . $oldImage;
+            if (file_exists($oldFile)) unlink($oldFile);
+        }
+        $newPromo['image'] = '';
+    }
+
     // ── Subida de imagen ─────────────────────────────────────────────────────
-    if (!empty($_FILES['image']['name'])) {
+    if (empty($_POST['clear_image']) && !empty($_FILES['image']['name'])) {
         $file    = $_FILES['image'];
         $ext     = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
         $errCode = $file['error'];
@@ -446,10 +456,17 @@ function h($s) { return htmlspecialchars($s ?? '', ENT_QUOTES, 'UTF-8'); }
       <img src="<?= $imgUrl ?>" alt="Promoción actual" class="current-preview"
            onerror="this.style.display='none'">
       <p class="current-path"><?= $imgSrc ?: 'Sin imagen' ?></p>
+      <?php if ($imgSrc): ?>
+      <label class="clear-label" style="display:flex;align-items:center;gap:8px;margin-top:14px;cursor:pointer;">
+        <input type="checkbox" name="clear_image" value="1" id="clear_image"
+               style="width:16px;height:16px;accent-color:var(--red);cursor:pointer;">
+        <span style="font-size:0.82rem;color:var(--red);">Eliminar imagen actual (la sección se ocultará si los campos también están vacíos)</span>
+      </label>
+      <?php endif; ?>
     </div>
 
     <!-- Nueva imagen -->
-    <div class="card">
+    <div class="card" id="new-image-card">
       <h2>Reemplazar imagen</h2>
       <div class="file-drop" id="file-drop">
         <input type="file" name="image" id="image-input"
