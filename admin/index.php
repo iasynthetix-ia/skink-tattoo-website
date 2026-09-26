@@ -37,6 +37,21 @@ $msg      = '';
 $msgType  = 'success';
 
 if ($auth && isset($_POST['action']) && $_POST['action'] === 'save') {
+
+    // ── Vaciar sección completa ───────────────────────────────────────────────
+    if (!empty($_POST['clear_all'])) {
+        $oldImage = $promo['image'] ?? '';
+        if ($oldImage && strpos($oldImage, UPLOADS_PATH) === 0) {
+            $oldFile = __DIR__ . '/../' . $oldImage;
+            if (file_exists($oldFile)) unlink($oldFile);
+        }
+        $empty = ['label'=>'','title'=>'','title_en'=>'','sub'=>'','sub_en'=>'','image'=>'','btnText'=>'','btnText_en'=>'','waMessage'=>''];
+        file_put_contents(PROMO_JSON, json_encode($empty, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+        $promo   = $empty;
+        $msg     = '✅ Sección promo vaciada. Se ocultará en el sitio.';
+        $msgType = 'success';
+    } else {
+
     $newPromo = $promo;
     $newPromo['title']     = trim($_POST['title']     ?? '');
     $newPromo['sub']       = trim($_POST['sub']       ?? '');
@@ -129,6 +144,8 @@ if ($auth && isset($_POST['action']) && $_POST['action'] === 'save') {
             $msgType = 'error';
         }
     }
+
+    } // end else (not clear_all)
 }
 
 // ── Auto-traducción ES → EN via MyMemory ─────────────────────────────────────
@@ -365,6 +382,20 @@ function h($s) { return htmlspecialchars($s ?? '', ENT_QUOTES, 'UTF-8'); }
 
     .btn-primary:hover { background: #0077ed; }
 
+    .btn-danger {
+      background: transparent;
+      color: var(--red);
+      border: 1.5px solid var(--red);
+      border-radius: 980px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      font-family: var(--font);
+      padding: 12px 20px;
+      cursor: pointer;
+      transition: background .2s, color .2s;
+    }
+    .btn-danger:hover { background: var(--red); color: var(--white); }
+
     .btn-logout {
       background: none;
       border: 1px solid var(--border);
@@ -518,7 +549,14 @@ function h($s) { return htmlspecialchars($s ?? '', ENT_QUOTES, 'UTF-8'); }
       </div>
     </div>
 
-    <button type="submit" class="btn-primary">Guardar cambios</button>
+    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:8px;">
+      <button type="submit" class="btn-primary" style="width:auto;flex:1;">Guardar cambios</button>
+      <button type="submit" name="clear_all" value="1"
+              class="btn-danger"
+              onclick="return confirm('¿Seguro que quieres vaciar toda la sección promo? Se eliminará la imagen y todos los textos.')">
+        Vaciar sección promo
+      </button>
+    </div>
   </form>
 
 </div>
