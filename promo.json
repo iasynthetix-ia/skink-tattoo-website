@@ -1,8 +1,11 @@
 {
     "label": "ESTILO DESTACADO",
-    "title": "Microrealismo 1",
-    "sub": "Detalle fotográfico. A escala íntima. 1",
+    "title": "Microrealismo",
+    "title_en": "Micro Realism",
+    "sub": "Detalle fotográfico.\nA escala íntima.",
+    "sub_en": "Photographic detail.\nAt intimate scale.",
     "image": "resources/promo-uploads/promo_1790372613.png",
-    "btnText": "Consultar promoción 1",
+    "btnText": "Consultar promoción",
+    "btnText_en": "Consult Promotion",
     "waMessage": "Hola! Estoy interesado en la promoción de Microrealismo. ¿Me dan más información?"
 }

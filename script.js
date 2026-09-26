@@ -1,21 +1,38 @@
 // ── Promo dinámica desde promo.json ──────────────────────
+let _promoData = null;
+
+function applyPromoLang(lang) {
+  if (!_promoData) return;
+  const title = document.getElementById('promo-title');
+  const sub   = document.getElementById('promo-sub');
+  const btn   = document.getElementById('promo-btn');
+  const d     = _promoData;
+
+  if (lang === 'en') {
+    if (title) title.textContent = d.title_en  || d.title   || '';
+    if (sub)   sub.innerHTML     = (d.sub_en   || d.sub     || '').replace(/\n/g, '<br>');
+    if (btn)   btn.textContent   = d.btnText_en || d.btnText || '';
+  } else {
+    if (title) title.textContent = d.title   || '';
+    if (sub)   sub.innerHTML     = (d.sub    || '').replace(/\n/g, '<br>');
+    if (btn)   btn.textContent   = d.btnText || '';
+  }
+}
+
 (function () {
   const section = document.getElementById('promocion');
-  const title   = document.getElementById('promo-title');
-  const sub     = document.getElementById('promo-sub');
-  const btn     = document.getElementById('promo-btn');
   if (!section) return;
 
   fetch('promo.json?v=' + Date.now())
     .then(r => r.json())
     .then(d => {
-      if (d.image)      section.style.backgroundImage = `url('${d.image}')`;
-      if (d.title)      title.textContent = d.title;
-      if (d.sub)        sub.innerHTML = d.sub.replace(/\n/g, '<br>');
-      if (d.btnText)    btn.textContent = d.btnText;
-      if (d.waMessage)  btn.href = 'https://wa.me/573104023043?text=' + encodeURIComponent(d.waMessage);
+      _promoData = d;
+      if (d.image)     section.style.backgroundImage = `url('${d.image}')`;
+      if (d.waMessage) document.getElementById('promo-btn').href =
+        'https://wa.me/573104023043?text=' + encodeURIComponent(d.waMessage);
+      applyPromoLang(currentLang);
     })
-    .catch(() => { /* si falla el fetch, los valores del HTML se mantienen */ });
+    .catch(() => {});
 }());
 
 // ── Hamburger menu ────────────────────────────────────────
@@ -313,6 +330,9 @@ function applyLang(lang) {
       ? 'Estudio de tatuajes en Cali con diseño personalizado. BlackWork, Color, Microrealismo y más estilos. Artistas profesionales. ¡Agenda tu cita gratis!'
       : 'Professional tattoo studio in Cali with custom design. BlackWork, Color, Micro Realism and more styles. Professional artists. Schedule your free appointment!';
   }
+
+  // Aplicar idioma al bloque de promo dinámica
+  applyPromoLang(lang);
 }
 
 function toggleLang() {

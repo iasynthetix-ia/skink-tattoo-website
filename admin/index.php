@@ -43,6 +43,27 @@ if ($auth && isset($_POST['action']) && $_POST['action'] === 'save') {
     $newPromo['btnText']   = trim($_POST['btnText']   ?? '');
     $newPromo['waMessage'] = trim($_POST['waMessage'] ?? '');
 
+    // Auto-traducir al inglés si el texto cambió o no existe traducción
+    $titleChanged   = ($newPromo['title']   !== ($promo['title']   ?? ''));
+    $subChanged     = ($newPromo['sub']     !== ($promo['sub']     ?? ''));
+    $btnTextChanged = ($newPromo['btnText'] !== ($promo['btnText'] ?? ''));
+
+    if ($titleChanged || empty($promo['title_en'])) {
+        $newPromo['title_en'] = autoTranslateToEn($newPromo['title']);
+    } else {
+        $newPromo['title_en'] = $promo['title_en'] ?? '';
+    }
+    if ($subChanged || empty($promo['sub_en'])) {
+        $newPromo['sub_en'] = autoTranslateToEn($newPromo['sub']);
+    } else {
+        $newPromo['sub_en'] = $promo['sub_en'] ?? '';
+    }
+    if ($btnTextChanged || empty($promo['btnText_en'])) {
+        $newPromo['btnText_en'] = autoTranslateToEn($newPromo['btnText']);
+    } else {
+        $newPromo['btnText_en'] = $promo['btnText_en'] ?? '';
+    }
+
     // ── Subida de imagen ─────────────────────────────────────────────────────
     if (!empty($_FILES['image']['name'])) {
         $file    = $_FILES['image'];
@@ -98,6 +119,17 @@ if ($auth && isset($_POST['action']) && $_POST['action'] === 'save') {
             $msgType = 'error';
         }
     }
+}
+
+// ── Auto-traducción ES → EN via MyMemory ─────────────────────────────────────
+function autoTranslateToEn($text) {
+    if (empty(trim($text))) return '';
+    $url  = 'https://api.mymemory.translated.net/get?q=' . urlencode($text) . '&langpair=es|en';
+    $ctx  = stream_context_create(['http' => ['timeout' => 5]]);
+    $resp = @file_get_contents($url, false, $ctx);
+    if (!$resp) return '';
+    $data = json_decode($resp, true);
+    return $data['responseData']['translatedText'] ?? '';
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
